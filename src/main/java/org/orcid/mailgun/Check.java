@@ -37,7 +37,7 @@ public class Check
         try {
                 JsonNode r = new MailgunAuth().sendTestMessage();
                 JSONObject firstval = r.isArray()?r.getArray().getJSONObject(0):r.getObject();
-                if(firstval.getString("message").indexOf("Great job") != -1 || firstval.getString("message").indexOf("Thank you") ) {
+                if(firstval.getString("message").indexOf("Great job") != -1 || firstval.getString("message").indexOf("Thank you") != -1 ) {
                         System.out.println("OK: Test email sent.");
                         System.exit(0);
                 }
