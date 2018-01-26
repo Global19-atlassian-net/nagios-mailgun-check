@@ -24,7 +24,7 @@ class MailgunAuth
                 .queryString("to", "you@ost.orcid.org")
                 .queryString("subject", "check")
                 .queryString("text", "mailgun checking...")
-                .queryString("o:testmode", true)
+                .field("o:testmode", true)
                 .asJson();
         return request.getBody();
     }
