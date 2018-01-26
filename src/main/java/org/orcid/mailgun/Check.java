@@ -21,10 +21,10 @@ class MailgunAuth
         HttpResponse<JsonNode> request = Unirest.post(config.getProperty("com.mailgun.notify.apiUrl"))
                 .basicAuth("api", config.getProperty("com.mailgun.apiKey"))
                 .queryString("from", "me@notify.orcid.org")
-                .queryString("to", "you@ost.orcid.org")
+                .queryString("to", "test@orcid.org")
                 .queryString("subject", "check")
                 .queryString("text", "mailgun checking...")
-                .queryString("o:testmode", true)
+                .field("o:testmode", true)
                 .asJson();
         return request.getBody();
     }
